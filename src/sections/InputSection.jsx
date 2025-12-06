@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { ButtonGroup, ButtonGroupText } from "@/components/ui/button-group";
 import { Input } from '../components/ui/input';
 import useGlobalContext from '../useGlobal';
-
 import {
   InputGroup,
   InputGroupAddon,
@@ -62,7 +61,7 @@ const InputSection = () => {
     <div className="grid w-full gap-4 py-4 sm:w-[288px]">
       <InputGroup className="has-[[data-slot=input-group-control]:focus-visible]:ring-0">
         <InputGroupAddon align="block-start" className="pt-3">
-          <Label htmlFor="email-2" className="text-foreground">
+          <Label htmlFor="amount" className="text-foreground">
             Bill
           </Label>
         </InputGroupAddon>
@@ -82,7 +81,7 @@ const InputSection = () => {
             }}
           />
           <InputGroupAddon align="inline-start" className="bg-(--Grey-50)">
-            {/* <Dollarsign /> */}
+            {/* Dollar sign */}
             <img src="/images/icon-dollar.svg" alt="" />
           </InputGroupAddon>
         </InputGroup>
@@ -131,7 +130,7 @@ const InputSection = () => {
             <Label className="text-red-500">Can't be zero</Label>
           )}
         </InputGroupAddon>
-        <InputGroup className="bg-(--Grey-50) border-(--Grey-50) hover:border-(--Green-400)">
+        <InputGroup className="bg-(--Grey-50) border-2 border-(--Grey-50) hover:border-(--Green-400)">
           <InputGroupInput
             type="number"
             id="no-of-people"
@@ -142,12 +141,12 @@ const InputSection = () => {
             onChange={(e) => {
               let val = e.target.value;
               if (val !== "" && parseFloat(val) < 0) val = "0";
-              setNoOfPeople(e.target.value);
-              inputNoOfPeople(e.target.value);
+              setNoOfPeople(val);
+              inputNoOfPeople(val);
             }}
           />
           <InputGroupAddon align="inline-start" className="bg-(--Grey-50)">
-            {/* <Dollarsign /> */}
+            {/* Person sign */}
             <img src="/images/icon-person.svg" alt="" />
           </InputGroupAddon>
         </InputGroup>
