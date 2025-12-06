@@ -21,7 +21,7 @@ const InputSection = () => {
   // Reset input fields when global state resets
   useEffect(() => {
     if (
-      state.amount === 0 &&~
+      state.amount === 0 &&
       state.numberOfPeople === 0 &&
       state.tipAmount === 0
     ) {
